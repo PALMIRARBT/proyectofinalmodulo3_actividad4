@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Fruta</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {
+            background: #f7fff0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        .detalle-container {
+            max-width: 500px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(60,120,60,0.12);
+            padding: 32px 24px;
+            text-align: center;
+        }
+        .detalle-container h2 {
+            color: #198754;
+            margin-bottom: 18px;
+        }
+        .detalle-container img {
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(60,120,60,0.10);
+            margin-bottom: 18px;
+        }
+        .detalle-container p {
+            font-size: 1.1rem;
+            color: #444;
+            margin-bottom: 24px;
+        }
+        .detalle-container .bienvenida {
+            font-size: 1.2rem;
+            color: #198754;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        .detalle-container .extra {
+            font-size: 0.98rem;
+            color: #666;
+            margin-bottom: 18px;
+        }
+        .campo-img {
+            max-width: 100%;
+            border-radius: 12px;
+            margin-bottom: 18px;
+            box-shadow: 0 2px 12px rgba(60,120,60,0.10);
+        }
+        .btn-regresar {
+            background: #198754;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 32px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-regresar:hover {
+            background: #145c32;
+        }
+    </style>
+</head>
+<body>
+    <div class="detalle-container">
+        <div class="bienvenida">¡Gracias por tu pedido!</div>
+        <h2 id="fruta-nombre"></h2>
+        <img id="fruta-imagen" src="" alt="Fruta seleccionada" style="max-width:400px; width:100%; height:auto;">
+        <img id="campo-imagen" class="campo-img" src="" alt="Campo de la fruta" style="display:none;">
+        <p id="fruta-texto"></p>
+        <div class="extra">Pronto recibirás información sobre el envío y cotización. Si deseas modificar tu pedido, regresa al menú principal.</div>
+        <button class="btn-regresar" onclick="regresar()">Regresar al menú principal</button>
+    </div>
+    <script>
+        // Obtener datos de la fruta desde localStorage
+        const fruta = JSON.parse(localStorage.getItem('frutaSeleccionada'));
+        if (fruta) {
+            document.getElementById('fruta-nombre').textContent = fruta.nombre;
+            document.getElementById('fruta-imagen').src = fruta.imagen;
+            document.getElementById('fruta-texto').textContent = fruta.texto;
+            // Mostrar imagen de campo según fruta
+            let campoImg = fruta.campo || '';
+            if (campoImg) {
+                const campoImagen = document.getElementById('campo-imagen');
+                campoImagen.src = campoImg;
+                campoImagen.style.display = 'block';
+            }
+        }
+        function regresar() {
+            window.close();
+        }
+    </script>
+</body>
+</html>

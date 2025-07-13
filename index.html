@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+  <title>Granja Soleada</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/estilos.css">
+  <!-- RESPONSIVO: Se agregó hoja de estilos para responsividad -->
+  <link rel="stylesheet" href="assets/css/responsivo.css">
+</head>
+<body>
+  <header class="text-center p-5">
+    <img src="assets/img/logo.png" alt="Logotipo Granja Soleada" style="width: 500px; height: 500px; object-fit: contain; margin-bottom:18px;">
+    <h1>Granja Soleada</h1>
+    <p class="lead">Frutas orgánicas que nutren el alma</p>
+    <div class="mb-2">
+      <a href="https://facebook.com" target="_blank" class="text-success me-3" title="Facebook"><i class="bi bi-facebook" style="font-size:2rem;"></i></a>
+      <a href="https://instagram.com" target="_blank" class="text-success me-3" title="Instagram"><i class="bi bi-instagram" style="font-size:2rem;"></i></a>
+      <a href="https://tiktok.com" target="_blank" class="text-success me-3" title="TikTok"><i class="bi bi-tiktok" style="font-size:2rem;"></i></a>
+      <a href="https://youtube.com" target="_blank" class="text-success" title="YouTube"><i class="bi bi-youtube" style="font-size:2rem;"></i></a>
+    </div>
+  </header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#">Inicio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#productos"><i class="bi bi-box-seam"></i> Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#nosotros"><i class="bi bi-people"></i> Quiénes Somos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto"><i class="bi bi-envelope"></i> Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mt-5">
+    <!-- Sección Quiénes Somos restaurada a su ubicación original -->
+    <section id="nosotros" class="mb-5">
+      <h2 class="text-success">Quiénes Somos</h2>
+      <p>
+        En Granja Soleada, somos una familia apasionada por la agricultura sostenible y el bienestar de quienes confían en nosotros. Cultivamos cada fruta con dedicación, respetando la tierra y sus ciclos, para ofrecerte productos orgánicos certificados que nutren cuerpo y alma.
+      </p>
+      <p>
+        Nuestra misión es inspirar confianza y alegría en cada hogar, garantizando calidad, frescura y sabor en cada entrega. Creemos en la transparencia, el trabajo honesto y el compromiso con el medio ambiente. ¡Gracias por permitirnos ser parte de tu vida y compartir juntos el fruto de nuestro esfuerzo!
+      <p>Como productores y distribuidores nacionales, recolectamos del campo nuestros productos y enviamos directo a tu mesa sin intermediarios, solo asi podemos ofrecerte productos de primera calidad y al mas bajo costo.</p>
+      </p>
+    </section>
+
+    <!-- RESPONSIVO: Sección de inicio para pedidos y cotización -->
+    <div class="container seccion-pedidos mb-5">
+      <div class="pedido-item">
+        <h5>Seleccionar ciudad de envío</h5>
+        <select class="form-select" id="estado-envio">
+          <option disabled selected>Selecciona un estado</option>
+          <option>Aguascalientes</option>
+          <option>Baja California</option>
+          <option>Baja California Sur</option>
+          <option>Campeche</option>
+          <option>Coahuila</option>
+          <option>Colima</option>
+          <option>Chiapas</option>
+          <option>Chihuahua</option>
+          <option>Durango</option>
+          <option>Guanajuato</option>
+          <option>Guerrero</option>
+          <option>Hidalgo</option>
+          <option>Jalisco</option>
+          <option>México</option>
+          <option>Michoacán</option>
+          <option>Morelos</option>
+          <option>Nayarit</option>
+          <option>Nuevo León</option>
+          <option>Oaxaca</option>
+          <option>Puebla</option>
+          <option>Querétaro</option>
+          <option>Quintana Roo</option>
+          <option>San Luis Potosí</option>
+          <option>Sinaloa</option>
+          <option>Sonora</option>
+          <option>Tabasco</option>
+          <option>Tamaulipas</option>
+          <option>Tlaxcala</option>
+          <option>Veracruz</option>
+          <option>Yucatán</option>
+          <option>Zacatecas</option>
+        </select>
+      </div>
+      <div class="pedido-item">
+        <h5>Seleccionar fruta</h5>
+        <select class="form-select">
+          <option>Mangos</option>
+          <option>Naranjas</option>
+          <option>Kiwis</option>
+          <option>Piñas</option>
+        </select>
+      </div>
+      <div class="pedido-item position-relative">
+        <h5>Solicitar un pedido</h5>
+        <button class="btn btn-success" id="btnSolicitarPedido">Solicitar</button>
+      </div>
+
+      <!-- RESPONSIVO: Botón de buscar para ir a solicitar pedido y cotizar envío -->
+      <!-- Eliminado: Botón Buscar -->
+      <div class="pedido-item">
+        <h5>Cotizar el envío</h5>
+        <button class="btn btn-primary" id="btnCotizarEnvio">Cotizar</button>
+        <div id="cotizarFormContainer" style="display:none; margin-top:24px;">
+          <form id="cotizarForm" class="bg-light p-4 rounded shadow-sm">
+            <h5 class="text-success mb-3">Cotización de envío</h5>
+            <div class="mb-3">
+              <label for="cotizarNombre" class="form-label">Nombre y Apellido</label>
+              <input type="text" class="form-control" id="cotizarNombre" required>
+            </div>
+            <div class="mb-3">
+              <label for="cotizarCorreo" class="form-label">Correo electrónico</label>
+              <input type="email" class="form-control" id="cotizarCorreo" required>
+            </div>
+            <div class="mb-3">
+              <label for="cotizarCajas" class="form-label">Cantidad de cajas a recibir</label>
+              <select class="form-select" id="cotizarCajas" required>
+                <option disabled selected>Seleccione cantidad</option>
+                <option value="1">1 caja</option>
+                <option value="2">2 cajas</option>
+                <option value="3">3 cajas</option>
+                <option value="4">4 cajas</option>
+                <option value="5">5 cajas</option>
+                <option value="6+">Más de 5 cajas</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Solicitar cotización</button>
+            <div class="mt-3 text-primary small">Distribuimos a nivel nacional a partir de 19 kilos a su central de abastos para poner en punto de venta a los supermercados o clientes finales.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+        <!-- Carrusel original y flex comentados para referencia -->
+        <!--
+        <div class="d-flex flex-row flex-wrap justify-content-center align-items-center gap-3">
+          <img src="assets/img/mangos.png" class="img-fluid" alt="Mangos">
+          <img src="assets/img/naranjas.png" class="img-fluid" alt="Naranjas">
+          <img src="assets/img/kiwis.png" class="img-fluid" alt="Kiwis">
+          <img src="assets/img/piñas.png" class="img-fluid" alt="Piñas">
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/img/mangos.png" class="d-block w-100" alt="Mangos">
+            <img src="assets/img/mangos2.png" class="d-block w-100" alt="Mangos">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/img/naranjas.png" class="d-block w-100" alt="Naranjas">
+            <img src="assets/img/naranjas2.png" class="d-block w-100" alt="Naranjas">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/img/kiwis.png" class="d-block w-100" alt="Kiwis">
+            <img src="assets/img/kiwis2.png" class="d-block w-100" alt="Kiwis">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/img/piñas.png" class="d-block w-100" alt="Piñas">
+            <img src="assets/img/piñas2.png" class="d-block w-100" alt="Piñas">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselFrutas" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselFrutas" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+        -->
+      </div>
+    </section>
+
+    <!-- RESPONSIVO: Carrusel de una sola imagen a la vez con tamaño uniforme -->
+    <div id="carouselFrutasUnica" class="carousel slide mb-4" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="assets/img/naranjas.png" class="d-block w-100 img-fluid img-carrusel" alt="Naranjas">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Naranjas</h5>
+            <p>Repletas de vitamina C, directo del árbol a tu mesa.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/mangos.png" class="d-block w-100 img-fluid img-carrusel" alt="Mangos">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Mangos</h5>
+            <p>Dulces, jugosos y cultivados sin químicos.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/kiwis.png" class="d-block w-100 img-fluid img-carrusel" alt="Kiwis">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Kiwis</h5>
+            <p>Frescos, exóticos y llenos de sabor.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/piñas.png" class="d-block w-100 img-fluid img-carrusel" alt="Piñas">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Piñas</h5>
+            <p>Tropicales, dulces y perfectas para el verano.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselFrutasUnica" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselFrutasUnica" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <main class="container mt-5">
+    <section id="productos" class="mb-5">
+      <h2 class="text-success">Nuestros Productos</h2>
+      <!-- RESPONSIVO: Sección con container-flex-object para productos en 4 columnas -->
+      <div class="container-flex-object mb-4">
+        <div class="producto-flex">
+          <img src="assets/img/mangos.png" alt="Mangos" class="img-flex">
+          <h5 class="mt-2">Mangos</h5>
+          <p class="descripcion-flex">Dulces, jugosos y cultivados sin químicos.</p>
+        </div>
+        <div class="producto-flex">
+          <img src="assets/img/naranjas2.png" alt="Naranjas" class="img-flex">
+          <h5 class="mt-2">Naranjas</h5>
+          <p class="descripcion-flex">Repletas de vitamina C, directo del árbol a tu mesa.</p>
+        </div>
+        <div class="producto-flex">
+          <img src="assets/img/kiwis2.png" alt="Kiwis" class="img-flex">
+          <h5 class="mt-2">Kiwis</h5>
+          <p class="descripcion-flex">Frescos, exóticos y llenos de sabor.</p>
+        </div>
+        <div class="producto-flex">
+          <img src="assets/img/piñas2.png" alt="Piñas" class="img-flex">
+          <h5 class="mt-2">Piñas</h5>
+          <p class="descripcion-flex">Tropicales, dulces y perfectas para el verano.</p>
+        </div>
+      </div>
+    </section>
+    <section id="contacto" class="mb-5">
+      <h2 class="text-success">Contáctanos</h2>
+      <form>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" required>
+          </div>
+          <div class="col-md-6">
+            <label for="correo" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="correo" required>
+          </div>
+          <div class="col-12">
+            <label for="mensaje" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="mensaje" rows="4" required></textarea>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-success">Enviar mensaje</button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- RESPONSIVO: Sección adicional para mostrar imágenes de frutas seleccionadas -->
+    <section id="frutas-seleccionadas" class="mt-5" style="display:none;">
+      <h3 class="text-success text-center mb-4">Fruta seleccionada para tu pedido</h3>
+      <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap">
+        <img src="assets/img/camponaranja.png" alt="Campo Naranja" id="camponaranja" style="display:none; width:120px; height:auto;">
+        <img src="assets/img/campopina.png" alt="Campo Piña" id="campopina" style="display:none; width:120px; height:auto;">
+        <img src="assets/img/campomango.png" alt="Campo Mango" id="campomango" style="display:none; width:120px; height:auto;">
+        <img src="assets/img/campokiwi.png" alt="Campo Kiwi" id="campokiwi" style="display:none; width:120px; height:auto;">
+      </div>
+    </section>
+
+    <!-- RESPONSIVO: Segundo container para cotizar el envío -->
+    <div class="container seccion-cotizar mb-5" id="containerCotizar" style="display:none;">
+      <h3 class="text-primary text-center mb-4">Cotizar el envío</h3>
+      <div class="d-flex justify-content-center align-items-center">
+        <button class="btn btn-primary" id="btnCotizarEnvio">Cotizar envío</button>
+      </div>
+      <div id="cotizacionResultado" class="mt-4 text-center"></div>
+    </div>
+
+    <!-- Sección Del campo a tu mesa restaurada -->
+    <section id="del-campo-a-tu-mesa" class="mb-5">
+      <h2 class="text-success text-center mb-4">Del Campo a Tu Mesa
+        <div id="infoPina" style="display:none;">
+          <img src="assets/img/campopina.png" alt="Campo Piña" id="imgPinaFloat" class="img-fluid fruta-seleccionada-img" style="display:block; max-width:600px; width:100%; height:auto; margin:0 auto;" />
+          <p class="mt-3 fs-5 text-center">La piña proviene de tierras tropicales, requiere clima cálido y húmedo, y cuidados especiales para su dulzura y frescura. Su cultivo respeta los ciclos naturales y la calidad del suelo.</p>
+        </div>
+        <div id="infoNaranja" style="display:none;">
+          <img src="assets/img/camponaranja.png" alt="Campo Naranja" id="imgNaranjaFloat" class="img-fluid fruta-seleccionada-img" style="display:block; max-width:600px; width:100%; height:auto; margin:0 auto;" />
+          <p class="mt-3 fs-5 text-center">La naranja crece en climas templados, con abundante sol y riego controlado. Su sabor y vitamina C dependen del cuidado en cada etapa de cultivo y cosecha.</p>
+        </div>
+        <div id="infoMango" style="display:none;">
+          <img src="assets/img/campomango.png" alt="Campo Mango" id="imgMangoFloat" class="img-fluid fruta-seleccionada-img" style="display:block; max-width:600px; width:100%; height:auto; margin:0 auto;" />
+          <p class="mt-3 fs-5 text-center">El mango necesita clima cálido y suelos fértiles. Se cuida cada árbol para lograr frutos jugosos, dulces y llenos de nutrientes, respetando el entorno natural.</p>
+        </div>
+        <div id="infoKiwi" style="display:none;">
+          <img src="assets/img/campokiwi.png" alt="Campo Kiwi" id="imgKiwiFloat" class="img-fluid fruta-seleccionada-img" style="display:block; max-width:600px; width:100%; height:auto; margin:0 auto;" />
+          <p class="mt-3 fs-5 text-center">El kiwi se cultiva en zonas frescas y húmedas, con atención especial al riego y protección del fruto. Su sabor único es resultado de un proceso natural y cuidadoso.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-white text-center p-3 mt-5">
+    <p>© 2025 Granja Soleada. Todos los derechos reservados.</p>
+    <p>Avenida Colonia del Valle, Colonia del Valle Centro, Benito Juárez, Ciudad de México, C.P. 03100</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init('GxgJp6Kewus4_FquP'); // Public Key real de EmailJS
+    })();
+  </script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
