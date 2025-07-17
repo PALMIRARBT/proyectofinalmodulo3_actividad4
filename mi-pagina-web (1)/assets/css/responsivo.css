@@ -1,17 +1,3 @@
-/* RESPONSIVO: Ajustes para la sección "Quienes Somos" (#nosotros) */
-#nosotros {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 5vw;
-  text-align: center;
-  box-sizing: border-box;
-}
-@media (max-width: 600px) {
-  #nosotros {
-    padding: 0 3vw;
-    font-size: 1.05rem;
-  }
-}
 /* LEYENDA: Cambios para responsividad marcados con comentarios RESPONSIVO */
 
 /* RESPONSIVO: Imágenes y videos flexibles */
@@ -97,7 +83,6 @@ img, video {
   }
   .producto-flex {
     width: 90vw;
-    max-width: 350px;
   }
 }
 
@@ -112,8 +97,7 @@ img, video {
 @media (max-width: 600px) {
   .img-carrusel {
     width: 90vw;
-    max-height: 180px;
-    height: auto;
+    height: 180px;
   }
 }
 
